@@ -32,17 +32,32 @@ const newStore = async (req, res) => {
 
 //create - generates a store item and redirects to index
 const create = async (req, res) => {
-    res.send("create")
+    //create the new store item
+    await Store.create(req.body)
+    //redirecting to main page
+    res.redirect("/store")
 }
 
 //edit - generates a page to edit a puppy 
 const edit = async (req, res) => {
-    res.send("edit")
+    //get the id param
+    const id = req.params.id
+    //get a item
+    const store = await Store.findById(id)
+    //render a view
+    res.render("store/edit", {
+        store
+    })
 }
 
 //update - generates a store item and redirects to index
 const update = async (req, res) => {
-    res.send("update")
+    // grab the id from params
+    const id = req.params.id
+    //updaye the store attribute
+    await Store.findByIdUpdate(id, req.body, {new: true})
+    //redirect to index page
+    res.redirect(`/store/${id}`)
 }
 
 //destroy - generates a store item and redirects to index

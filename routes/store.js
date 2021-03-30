@@ -15,7 +15,7 @@ router.post("/", StoreController.create)
 router.get("/:id/edit", StoreController.edit)
 
 //index put => "/store"
-router.put("/", StoreController.update)
+router.put("/:id", StoreController.update)
 
 
 //destroy delete => "/store/:id"

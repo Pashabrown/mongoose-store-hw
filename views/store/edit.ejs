@@ -7,21 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
     <title>Attribute Store</title>
-    </head>
+</head>
 
 <body>
     <h1>Attribute Store for your Soul</h1>
     <a href="/store"><button>Back to Main Store Page</button></a>
     <main>
-        
+
         <article id="formcontainer">
-            <form id="form" action="/store" method="post">
-                <input type="text" placeholder="place img url here" name="img"/>
-                <input type="submit" value="create attribute"
-            </form>
-    
+            <form id="form" action="/store/<%= store._id %>?_method=PUT" method="post">
+                <input type="text" placeholder="place img url here" value="<%= store.img %>" name="img" />
+                <input type="submit" value="update attribute" </form>
+
         </article>
     </main>
- </body>
+</body>
 
 </html>

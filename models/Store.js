@@ -4,6 +4,7 @@ const {model, schema} = require("../db/connection")
 
 //create schema
 const StoreSchema = new Schema({
+    Title: String, 
     img: String,
     price: String,
     stock:{type: Number, default: 10}

@@ -15,14 +15,16 @@
     <main>
         
 
-            
+                <h2>Title <%= store.Title %>
                 <img src=" <%=store.img %>" />
                 <h2>$<%= store.price %></h2>
                 <h2>stock <%= store.stock %></h2>
                 <button>Buy</button>
+                <a href="/store/<%= store._id %>/edit"<button>Edit Attribute</button></a>
+
            
 
-            <% } %>
+            <%  %>
     </main>
 </body>
 

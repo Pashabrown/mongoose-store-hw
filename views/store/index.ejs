@@ -9,12 +9,15 @@
 </head>
 <body>
     <h1>Attribute Store for your Soul</h1>
+    <a href="/store/new"><button>Add an Attribute</button></a>
     <main>
         <% for (store of stores) { %>
 
             <article>
+                <h2>Title <%= store.Title %>
+                </h2>
                 <a href="/store/<%= store._id %>"><img src="<%= store.img %>" /></a>
-                <h2>$<%= store.price %></h2>
+                <h2>$ = <%= store.price %></h2>
                 <h2>stock <%= store.stock %></h2>
                 <button>Buy</button>
             </article>
