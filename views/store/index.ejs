@@ -18,8 +18,8 @@
                 </h2>
                 <a href="/store/<%= store._id %>"><img src="<%= store.img %>" /></a>
                 <h2>$ = <%= store.price %></h2>
-                <h2>stock <%= store.stock %></h2>
-                <button>Buy</button>
+                <h2>stocks <%= store.stocks %></h2>
+                <a href="/store/stocks/<%= store._id %>?_method=PUT" method="post"><button>Buy</button></a>
             </article>
 
        <% } %>

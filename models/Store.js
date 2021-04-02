@@ -7,7 +7,7 @@ const StoreSchema = new Schema({
     Title: String, 
     img: String,
     price: String,
-    stock:{type: Number, default: 10}
+    stocks:{type: Number, default: 10}
 }, {timestamps: true})
 
 //create a model 

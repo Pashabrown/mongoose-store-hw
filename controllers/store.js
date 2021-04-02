@@ -62,9 +62,20 @@ const update = async (req, res) => {
 
 //destroy - generates a store item and redirects to index
 const destroy = async (req, res) => {
-    res.send("updatedestroy")
+    const id = req.params.id
+    //delete attribute
+    await Store.findByIdAndDelete(id)
+    //redirect to main page
+    res.redirect("/store")
 }
 
+const buyStock = async (req, res) => {
+    //grab the ID
+    const id = req.params.id
+    //increment the stock lower
+    await  Store.findOneAndUpdate(id, {$inc: {stocks: -1}})
+    res.redirect("/store")
+}
 //exports my controller
 module.exports = {
     index,
@@ -74,4 +85,5 @@ module.exports = {
     edit, 
     update, 
     destroy,
+    buyStock
 }

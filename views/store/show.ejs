@@ -19,8 +19,11 @@
                 <img src=" <%=store.img %>" />
                 <h2>$<%= store.price %></h2>
                 <h2>stock <%= store.stock %></h2>
-                <button>Buy</button>
+                <a href="/store/stocks/<%= store._id %>"><button>Buy</button></a>
                 <a href="/store/<%= store._id %>/edit"<button>Edit Attribute</button></a>
+                <form action="/store/<%= store._id %>? method=DELETE" method=post>
+                <input type="submit" value="DELETE Attribute"/>
+                </form>
 
            
 

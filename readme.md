@@ -1,4 +1,4 @@
-# BOILERPLATE DIRECTIONS
+# Attribute Store
 
 - clone with command `npx degit githubusername/githubreponame#branchname projectName`
 
