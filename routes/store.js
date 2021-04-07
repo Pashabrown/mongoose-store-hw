@@ -24,7 +24,7 @@ router.delete("/:id", StoreController.destroy)
 //index get => "/store/:id"
 router.get("/:id", StoreController.show)
 
-router.get("/stocks/:id", StoreController.buyStock)
+router.get("/stocks/:id/:itemid", StoreController.buyStock)
 
 //export the router 
 module.exports = router

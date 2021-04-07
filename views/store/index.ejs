@@ -14,12 +14,12 @@
         <% for (store of stores) { %>
 
             <article>
-                <h2>Title <%= store.Title %>
+                <h2>Title <%= store.title %>
                 </h2>
                 <a href="/store/<%= store._id %>"><img src="<%= store.img %>" /></a>
                 <h2>$ = <%= store.price %></h2>
                 <h2>stocks <%= store.stocks %></h2>
-                <a href="/store/stocks/<%= store._id %>?_method=PUT" method="post"><button>Buy</button></a>
+                <a href="/store/stocks/<%= store._id %>/<%= store.itemId %>?_method=PUT" method="post"><button>Buy</button></a>
             </article>
 
        <% } %>

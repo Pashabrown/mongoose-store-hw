@@ -71,9 +71,14 @@ const destroy = async (req, res) => {
 
 const buyStock = async (req, res) => {
     //grab the ID
+    
     const id = req.params.id
+    console.log(id)
+    const itemId = req.params.itemid.toString()
+    console.log(itemId)
     //increment the stock lower
-    await  Store.findOneAndUpdate(id, {$inc: {stocks: -1}})
+    const item = await  Store.findOneAndUpdate({itemId:itemId }, {$inc: {stocks: -1}})
+    console.log(item)
     res.redirect("/store")
 }
 //exports my controller
